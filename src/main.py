@@ -20,7 +20,7 @@ app.register_blueprint(dogs_bp, url_prefix='/api')
 app.register_blueprint(owners_bp, url_prefix='/api')
 
 # Configuración de base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(os.path.dirname(__file__), 'database', 'app.db')}"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456789@localhost/new_schema' 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 with app.app_context():
